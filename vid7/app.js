@@ -3,7 +3,7 @@ var fs = require('fs')
 var url = require('url')
 
 http.createServer(function (req,res){
-    var q = url.parse(req.url)
+    var q = url.parse(req.url, true)
     console.log(q.pathname)
 
 
@@ -20,8 +20,11 @@ http.createServer(function (req,res){
             res.end()
         })
     }else if(q.pathname==='/signupaction'){
-
+        res.writeHead(200,{'Content-Type' : 'text/html'})
         console.log(q.query)
+        console.log(q.query.lname)
+
+        res.write('<h1>'+q.query.fname+'</h1>')
 
         res.write('action')
         res.end()

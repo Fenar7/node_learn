@@ -14,6 +14,15 @@ function longTask(millsec){
     }
 }
 
+function showEnd(){
+    console.log('end')
+}
+
 console.log('started')
-longTask(4000)
-console.log('end')
+setTimeout(showEnd,2000)
+
+console.log('started')
+setTimeout(showEnd,2000)
+
+console.log('started')
+setTimeout(showEnd,2000)
